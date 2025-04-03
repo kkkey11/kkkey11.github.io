@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en" color-mode="light">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="John Doe" />
+  <!-- Open Graph Description 简短摘要-->
+  
+  <!-- 用于搜索引擎的文章摘要 -->
+  
+  
+  
+  <title>
+    
+      面向对象程序设计 
+      
+      
+      |
+    
+     key11&#39;s Blog
+  </title>
+
+  
+    <link rel="apple-touch-icon" href="https://kkkey11-image.oss-cn-shenzhen.aliyuncs.com/blog/cat.png">
+    <link rel="icon" href="https://kkkey11-image.oss-cn-shenzhen.aliyuncs.com/blog/cat.png">
+  
+
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+  <!-- hexo site css -->
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1886449_67xjft27j1l.css" />
+  <!-- 代码块风格 -->
+  
+
+  <!-- jquery3.3.1 -->
+  
+    <script defer type="text/javascript" src="/plugins/jquery.min.js"></script>
+  
+
+  <!-- fancybox -->
+  
+    <link href="/plugins/jquery.fancybox.min.css" rel="stylesheet">
+    <script defer type="text/javascript" src="/plugins/jquery.fancybox.min.js"></script>
+  
+  
+<script src="/js/fancybox.js"></script>
+
+
+  
+
+  
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  <script>
+    var html = document.documentElement
+    const colorMode = localStorage.getItem('color-mode')
+    if (colorMode) {
+      document.documentElement.setAttribute('color-mode', colorMode)
+    }
+  </script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+  <body>
+    <div id="app">
+      <div class="header">
+  <div class="avatar">
+    <a href="/">
+      <!-- 头像取消懒加载，添加no-lazy -->
+      
+        <img src="https://kkkey11-image.oss-cn-shenzhen.aliyuncs.com/blog/cat.png" alt="">
+      
+    </a>
+    <div class="nickname"><a href="/">kkkey11</a></div>
+  </div>
+  <div class="navbar">
+    <ul>
+      
+        <li class="nav-item" data-path="/">
+          <a href="/">主页</a>
+        </li>
+      
+        <li class="nav-item" data-path="/archives/">
+          <a href="/archives/">归档</a>
+        </li>
+      
+        <li class="nav-item" data-path="/categories/">
+          <a href="/categories/">分类</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+<script src="/js/activeNav.js"></script>
+
+
+
+      <div class="flex-container">
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+
+
+  <!-- LaTex Display -->
+
+  
+    <script async type="text/javascript" src="/plugins/mathjax/tex-chtml.js"></script>
+  
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    }
+  </script>
+
+
+
+
+
+  <!-- clipboard -->
+
+  
+    <script async type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.10/dist/clipboard.min.js"></script>
+  
+  
+<script src="/js/codeCopy.js"></script>
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">面向对象程序设计</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
+          2025-04-04 07:24:37
+        </span>
+        
+              <span class="post-categories">
+                <i class="iconfont icon-bookmark" title="Categories"></i>
+                
+                <span class="span--category">
+                  <a href="/categories/code/" title="code">
+                    <b>#</b> code
+                  </a>
+                </span>
+                
+              </span>
+          
+      </div>
+      <div class="markdown-body">
+        <p>由于c++理论课一直没有去上，实验课一开始又投机取巧没有按题目要求写，导致现在实验课上得有点头痛……决定开一篇把之前的实验重新规范写一下，放一些模板上来，上到哪写到哪吧。</p>
+<hr>
+<h3 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h3><h4 id="找数组最大值"><a href="#找数组最大值" class="headerlink" title="找数组最大值"></a>找数组最大值</h4><h6 id="code"><a href="#code" class="headerlink" title="code"></a>code</h6><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="comment">// 调用指针</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">FindArrayMax</span><span class="params">(<span class="type">int</span> a[], <span class="type">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> max = *a;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (*(a + i) &gt; max)</span><br><span class="line">        &#123;</span><br><span class="line">            max = *(a + i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> max;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> MAXN = <span class="number">10</span>;</span><br><span class="line">    <span class="type">int</span> i, n;</span><br><span class="line">    <span class="type">int</span> a[MAXN];</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cin &gt;&gt; a[i];</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; <span class="built_in">FindArrayMax</span>(a, n) &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>基础指针调用。</p>
+<h4 id="动态矩阵"><a href="#动态矩阵" class="headerlink" title="动态矩阵"></a>动态矩阵</h4><h6 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h6><p>未知一个整数矩阵的大小，在程序运行时才会输入矩阵的行数m和列数n</p>
+<p>要求使用指针，结合<strong>new</strong>方法，动态创建一个二维数组，并求出该矩阵的最小值和最大值，可以使用数组下标法。</p>
+<p>不能先创建一个超大矩阵，然后只使用矩阵的一部分空间来进行数据访问、</p>
+<p>创建的矩阵大小必须和输入的行数m和列数n一样</p>
+<h6 id="code-1"><a href="#code-1" class="headerlink" title="code"></a>code</h6><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> t;</span><br><span class="line">    cin &gt;&gt; t;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> u = <span class="number">1</span>; u &lt;= t; u++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> m, n;</span><br><span class="line">        cin &gt;&gt; m &gt;&gt; n;</span><br><span class="line">        <span class="type">int</span> maxx;</span><br><span class="line">        <span class="type">int</span> minn;</span><br><span class="line">        <span class="comment">// 建立动态二维数组</span></span><br><span class="line">        <span class="type">int</span> **k = <span class="keyword">new</span> <span class="type">int</span> *[m];</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; m; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            k[i] = <span class="keyword">new</span> <span class="type">int</span>[n];</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; n; j++)</span><br><span class="line">            &#123;</span><br><span class="line">                cin &gt;&gt; k[i][j];</span><br><span class="line">                <span class="comment">// 初始化最大最小值</span></span><br><span class="line">                <span class="keyword">if</span> (i == <span class="number">0</span> &amp;&amp; j == <span class="number">0</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    maxx = k[i][j];</span><br><span class="line">                    minn = k[i][j];</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">// 更新最大最小值</span></span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                &#123;</span><br><span class="line">                    maxx = <span class="built_in">max</span>(maxx, k[i][j]);</span><br><span class="line">                    minn = <span class="built_in">min</span>(minn, k[i][j]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; minn &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; maxx &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">        <span class="comment">// 释放数组空间</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; m; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">delete</span>[] k[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">delete</span>[] k;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>主要是熟悉如何建立动态数组和释放空间。</p>
+<h4 id="密钥加密法"><a href="#密钥加密法" class="headerlink" title="密钥加密法"></a>密钥加密法</h4><h6 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h6><p>有一种方式是使用密钥进行加密的方法，就是对明文的每个字符使用密钥上对应的密码进行加密，最终得到密文</p>
+<p>例如明文是<code>abcde</code>，密钥是234，那么加密方法就是a对应密钥的2，也就是a偏移2位转化为c；明文b对应密钥的3，就是b偏移3位转化为e，同理c偏移4位转化为g。这时候密钥已经使用完，那么又重头开始使用。因此明文的d对应密钥的2，转化为f，明文的e对应密钥的3转化为h。所以明文<code>abcde</code>，密钥234，经过加密后得到密文是<code>cegfh</code>。</p>
+<p>如果字母偏移的位数超过26个字母范围，则循环偏移，例如字母z偏移2位，就是转化为b，同理字母x偏移5位就是转化为c</p>
+<p>要求：使用三个<strong>指针</strong>p、q、s分别指向明文、密钥和密文，然后使用指针p和q来访问每个位置的字符，进行加密得到密文存储在指针s指向的位置。</p>
+<p>除了变量定义和输入数据，其他过程都不能使用数组下标法，必须使用三个指针来访问明文、密钥和密文。</p>
+<p>提示：当指针q已经移动到密钥的末尾，但明文仍然没有结束，那么q就跳回密钥头</p>
+<h6 id="code-2"><a href="#code-2" class="headerlink" title="code"></a>code</h6><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">(<span class="type">char</span> &amp;p, <span class="type">char</span> &amp;q, <span class="type">char</span> &amp;s)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 用一个int存储密文值，防止字符越界</span></span><br><span class="line">    <span class="type">int</span> add = p + q;</span><br><span class="line">    <span class="keyword">if</span> (p &gt;= <span class="string">&#x27;a&#x27;</span> &amp;&amp; p &lt;= <span class="string">&#x27;z&#x27;</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span> (add &gt; <span class="string">&#x27;z&#x27;</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            add -= <span class="number">26</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span> (add &gt; <span class="string">&#x27;Z&#x27;</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            add -= <span class="number">26</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    s = add;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> t;</span><br><span class="line">    cin &gt;&gt; t;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> u = <span class="number">0</span>; u &lt; t; u++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">char</span> s[<span class="number">22</span>];</span><br><span class="line">        <span class="type">char</span> c[<span class="number">22</span>];</span><br><span class="line">        cin &gt;&gt; s &gt;&gt; c;</span><br><span class="line">        <span class="type">int</span> k = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">// 密钥预处理</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="built_in">strlen</span>(c); i++)</span><br><span class="line">        &#123;</span><br><span class="line">            c[i] -= <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">            c[i] %= <span class="number">26</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="built_in">strlen</span>(s); i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">char</span> ans;</span><br><span class="line">            <span class="built_in">solve</span>(*(s + i), *(c + k), ans);</span><br><span class="line">            cout &lt;&lt; ans;</span><br><span class="line">            k++;</span><br><span class="line">            <span class="comment">// 跳回密钥头</span></span><br><span class="line">            <span class="keyword">if</span> (k == <span class="built_in">strlen</span>(c))</span><br><span class="line">            &#123;</span><br><span class="line">                k = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其实就是比较繁琐的一道题……没什么难度，注意’<code>z</code>‘的ASCII值为<em>122</em>，但ASCII值只到<em>127</em>，直接加可能会超出这个范围导致变为负数，循环条件不成立导致输出有问题，我一开始就是踩到这个坑de了很久bug……</p>
+<hr>
+<h3 id="引用与结构"><a href="#引用与结构" class="headerlink" title="引用与结构"></a>引用与结构</h3><h4 id="谁是老二"><a href="#谁是老二" class="headerlink" title="谁是老二"></a>谁是老二</h4><h6 id="题目描述-2"><a href="#题目描述-2" class="headerlink" title="题目描述"></a>题目描述</h6><p>定义一个结构体，包含年月日，表示一个学生的出生日期。然后在一群学生的出生日期中找出谁的出生日期排行第二</p>
+<p>要求：出生日期的存储必须使用<strong>结构体</strong>，不能使用其他类型的数据结构。</p>
+<p>要求程序全过程对出生日期的输入、访问、输出都必须使用结构。</p>
+<h6 id="code-3"><a href="#code-3" class="headerlink" title="code"></a>code</h6><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">bir</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> y, m, d;</span><br><span class="line">    <span class="comment">// 运算符重载</span></span><br><span class="line">    <span class="type">bool</span> <span class="keyword">operator</span>&lt;(<span class="type">const</span> bir &amp;that) <span class="type">const</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (y != that.y)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> y &lt; that.y;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (m != that.m)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">return</span> m &lt; that.m;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">return</span> d &lt; that.d;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    bir a[n + <span class="number">1</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cin &gt;&gt; a[i].y &gt;&gt; a[i].m &gt;&gt; a[i].d;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">sort</span>(a, a + n);</span><br><span class="line">    cout &lt;&lt; a[<span class="number">1</span>].y &lt;&lt; <span class="string">&quot;-&quot;</span> &lt;&lt; a[<span class="number">1</span>].m &lt;&lt; <span class="string">&quot;-&quot;</span> &lt;&lt; a[<span class="number">1</span>].d;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>留个结构体运算符重载模板。</p>
+<h4 id="抄袭查找"><a href="#抄袭查找" class="headerlink" title="抄袭查找"></a>抄袭查找</h4><h6 id="题目描述-3"><a href="#题目描述-3" class="headerlink" title="题目描述"></a>题目描述</h6><p>已知一群学生的考试试卷，要求对试卷内容进行对比，查找是否有抄袭。</p>
+<p>每张试卷包含：学号（整数类型）、题目1答案（字符串类型）、题目2答案（字符串类型）、题目3答案（字符串类型）</p>
+<p>要求：使用<strong>结构体</strong>来存储试卷的信息。定义一个函数，返回值为一个整数，参数是两个结构体<strong>指针</strong>，函数操作是比较两张试卷的每道题目的答案，如果相同题号的答案相似度超过90%，那么就认为有抄袭，函数返回抄袭题号，否则返回0。相似度是指在同一题目中，两个答案的逐个位置上的字符两两比较，相同的数量大于等于<strong>任一个</strong>答案的长度的90%，就认为抄袭。</p>
+<h6 id="code-4"><a href="#code-4" class="headerlink" title="code"></a>code</h6><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">aa</span></span><br><span class="line">&#123;</span><br><span class="line">    string s;</span><br><span class="line">    string ans[<span class="number">3</span>];</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">solve</span><span class="params">(aa &amp;a, aa &amp;b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> p = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 记得是取较小答案长度</span></span><br><span class="line">        <span class="type">int</span> len = <span class="built_in">min</span>(a.ans[i].<span class="built_in">length</span>(), b.ans[i].<span class="built_in">length</span>());</span><br><span class="line">        <span class="type">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; len; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (a.ans[i][j] == b.ans[i][j])</span><br><span class="line">            &#123;</span><br><span class="line">                cnt++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 懒得用double，字符串长度不超过100，这样写精度已经够了</span></span><br><span class="line">        <span class="keyword">if</span> ((cnt * <span class="number">10</span>) / len &gt;= <span class="number">9</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            p = i + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 返回抄袭题号，未抄袭返回0</span></span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    aa a[n + <span class="number">1</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cin &gt;&gt; a[i].s;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; <span class="number">3</span>; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            cin &gt;&gt; a[i].ans[j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 两两检查</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n - <span class="number">1</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = i + <span class="number">1</span>; j &lt; n; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">int</span> p = <span class="built_in">solve</span>(*(a + i), *(a + j));</span><br><span class="line">            <span class="keyword">if</span> (p != <span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                cout &lt;&lt; a[i].s &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; a[j].s &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; p &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>又是一道烦烦的繁琐题…练一下吧。抄什么袭！</p>
+<hr>
+<h3 id="类与对象"><a href="#类与对象" class="headerlink" title="类与对象"></a>类与对象</h3><h4 id="身体评估"><a href="#身体评估" class="headerlink" title="身体评估"></a>身体评估</h4><h6 id="题目描述-4"><a href="#题目描述-4" class="headerlink" title="题目描述"></a>题目描述</h6><p>评估成年人身体健康有多个指标，包括BMI、体脂率等</p>
+<p>设计一个身体健康<strong>类</strong>，包含<strong>私有成员</strong>：姓名、身高(米)、体重(公斤)，腰围(厘米)，实现两个公有方法如下：</p>
+<p>BMI方法，返回BMI数值(整数，四舍五入到个位)，计算公式BMI&#x3D; 体重 &#x2F; 身高的平方</p>
+<p>体脂率方法，返回体脂率数值(浮点数)，计算过程如下：</p>
+<p>1）参数a&#x3D;腰围（cm）×0.74</p>
+<p>2）参数b&#x3D;体重（kg）×0.082+34.89</p>
+<p>3）体脂肪重量（kg）&#x3D;a－b</p>
+<p>4）体脂率 &#x3D; 体脂肪重量÷体重</p>
+<p>其它方法根据需要自行定义</p>
+<h6 id="code-5"><a href="#code-5" class="headerlink" title="code"></a>code</h6><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">kk</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    string s;</span><br><span class="line">    <span class="type">double</span> h, w, y;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">// set函数给类内参数赋值</span></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">set</span><span class="params">(string ss, <span class="type">double</span> hh, <span class="type">double</span> ww, <span class="type">double</span> yy)</span></span>;</span><br><span class="line">    <span class="comment">// get函数访问类内参数</span></span><br><span class="line">    <span class="function">string <span class="title">gets</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="comment">// 计算各种值……</span></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">bmi</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="type">double</span> <span class="title">aa</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="type">double</span> <span class="title">bb</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="type">double</span> <span class="title">dd</span><span class="params">()</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">kk::set</span><span class="params">(string ss, <span class="type">double</span> hh, <span class="type">double</span> ww, <span class="type">double</span> yy)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    s = ss;</span><br><span class="line">    h = hh;</span><br><span class="line">    w = ww;</span><br><span class="line">    y = yy;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">string <span class="title">kk::gets</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> s;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">kk::bmi</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 这里bmi需要四舍五入，不可以直接用int</span></span><br><span class="line">    <span class="type">double</span> bmii = w / (h * h);</span><br><span class="line">    <span class="type">int</span> bmi = bmii / <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (bmii - bmi &gt;= <span class="number">0.5</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        bmi++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> bmi;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">kk::aa</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0.74</span> * y;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">kk::bb</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> w * <span class="number">0.082</span> + <span class="number">34.89</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">kk::dd</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (<span class="built_in">aa</span>() - <span class="built_in">bb</span>()) / w;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> t;</span><br><span class="line">    cin &gt;&gt; t;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> u = <span class="number">0</span>; u &lt; t; u++)</span><br><span class="line">    &#123;</span><br><span class="line">        string s;</span><br><span class="line">        <span class="type">double</span> h, w, y;</span><br><span class="line">        cin &gt;&gt; s &gt;&gt; h &gt;&gt; w &gt;&gt; y;</span><br><span class="line">        kk a;</span><br><span class="line">        a.<span class="built_in">set</span>(s, h, w, y);</span><br><span class="line">        cout &lt;&lt; a.<span class="built_in">gets</span>() &lt;&lt; <span class="string">&quot;的BMI指数为&quot;</span> &lt;&lt; a.<span class="built_in">bmi</span>() &lt;&lt; <span class="string">&quot;--体脂率为&quot;</span> &lt;&lt; fixed &lt;&lt; <span class="built_in">setprecision</span>(<span class="number">2</span>) &lt;&lt; a.<span class="built_in">dd</span>() &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>掌握class内如何构造函数，如何给类内参数赋值，如何用get访问类内参数。其他操作和结构体类似。</p>
+<hr>
+<h3 id="构造与析构"><a href="#构造与析构" class="headerlink" title="构造与析构"></a>构造与析构</h3><h4 id="分数类"><a href="#分数类" class="headerlink" title="分数类"></a>分数类</h4><h6 id="题目描述-5"><a href="#题目描述-5" class="headerlink" title="题目描述"></a>题目描述</h6><p>完成下列分数类的实现:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">CFraction</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">   <span class="type">int</span> fz, fm;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">   <span class="built_in">CFraction</span>(<span class="type">int</span> fz_val, <span class="type">int</span> fm_val);</span><br><span class="line">   <span class="function">CFraction <span class="title">add</span><span class="params">(<span class="type">const</span> CFraction &amp;r)</span></span>;</span><br><span class="line">   <span class="function">CFraction <span class="title">sub</span><span class="params">(<span class="type">const</span> CFraction &amp;r)</span></span>;</span><br><span class="line">   <span class="function">CFraction <span class="title">mul</span><span class="params">(<span class="type">const</span> CFraction &amp;r)</span></span>;</span><br><span class="line">   <span class="function">CFraction <span class="title">div</span><span class="params">(<span class="type">const</span> CFraction &amp;r)</span></span>;</span><br><span class="line">   <span class="function"><span class="type">int</span> <span class="title">getGCD</span><span class="params">()</span></span>;  <span class="comment">// 求对象的分子和分母的最大公约数</span></span><br><span class="line">   <span class="function"><span class="type">void</span> <span class="title">print</span><span class="params">()</span></span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>求两数a、b的最大公约数可采用辗转相除法，又称欧几里得算法，其步骤为:</p>
+<ol>
+<li>交换a, b使a &gt; b;</li>
+<li>用a除b得到余数r,若r&#x3D;0,则b为最大公约数,退出.</li>
+<li>若r不为0,则用b代替a, r代替b,此时a,b都比上一次的小,问题规模缩小了;</li>
+<li>继续第2步。</li>
+</ol>
+<p>注意：如果分母是1的话，也按“分子&#x2F;1”的方式输出。</p>
+<h6 id="code-6"><a href="#code-6" class="headerlink" title="code"></a>code</h6><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">cf</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="type">int</span> m, s;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">// 构造</span></span><br><span class="line">    <span class="built_in">cf</span>(<span class="type">int</span> ss, <span class="type">int</span> mm);</span><br><span class="line">    <span class="function">cf <span class="title">add</span><span class="params">(<span class="type">const</span> cf &amp;that)</span></span>;</span><br><span class="line">    <span class="function">cf <span class="title">sub</span><span class="params">(<span class="type">const</span> cf &amp;that)</span></span>;</span><br><span class="line">    <span class="function">cf <span class="title">mul</span><span class="params">(<span class="type">const</span> cf &amp;that)</span></span>;</span><br><span class="line">    <span class="function">cf <span class="title">div</span><span class="params">(<span class="type">const</span> cf &amp;that)</span></span>;</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">gcd</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">print</span><span class="params">()</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">cf::gcd</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> a = s;</span><br><span class="line">    <span class="type">int</span> b = m;</span><br><span class="line">    <span class="keyword">while</span> (b != <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> t = a % b;</span><br><span class="line">        a = b;</span><br><span class="line">        b = t;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br><span class="line">cf::<span class="built_in">cf</span>(<span class="type">int</span> ss, <span class="type">int</span> mm)</span><br><span class="line">&#123;</span><br><span class="line">    s = ss;</span><br><span class="line">    m = mm;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">cf <span class="title">cf::add</span><span class="params">(<span class="type">const</span> cf &amp;that)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> ss = m * that.s + that.m * s;</span><br><span class="line">    <span class="type">int</span> mm = m * that.m;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">cf</span>(ss, mm);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">cf <span class="title">cf::sub</span><span class="params">(<span class="type">const</span> cf &amp;that)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> ss = s * that.m - that.s * m;</span><br><span class="line">    <span class="type">int</span> mm = m * that.m;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">cf</span>(ss, mm);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">cf <span class="title">cf::mul</span><span class="params">(<span class="type">const</span> cf &amp;that)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> ss = s * that.s;</span><br><span class="line">    <span class="type">int</span> mm = m * that.m;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">cf</span>(ss, mm);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">cf <span class="title">cf::div</span><span class="params">(<span class="type">const</span> cf &amp;that)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> ss = s * that.m;</span><br><span class="line">    <span class="type">int</span> mm = m * that.s;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">cf</span>(ss, mm);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">cf::print</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 输出前处理</span></span><br><span class="line">    <span class="type">int</span> g = <span class="built_in">gcd</span>();</span><br><span class="line">    s /= g;</span><br><span class="line">    m /= g;</span><br><span class="line">    <span class="keyword">if</span> (m &lt; <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        m *= <span class="number">-1</span>;</span><br><span class="line">        s *= <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; s &lt;&lt; <span class="string">&quot;/&quot;</span> &lt;&lt; m &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> t;</span><br><span class="line">    cin &gt;&gt; t;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; t; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> s1, s2, m1, m2;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d/%d&quot;</span>, &amp;s1, &amp;m1);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d/%d&quot;</span>, &amp;s2, &amp;m2);</span><br><span class="line">        <span class="function">cf <span class="title">f1</span><span class="params">(s1, m1)</span>, <span class="title">f2</span><span class="params">(s2, m2)</span></span>;</span><br><span class="line">        cf add = f<span class="number">1.</span><span class="built_in">add</span>(f2);</span><br><span class="line">        add.<span class="built_in">print</span>();</span><br><span class="line">        cf sub = f<span class="number">1.</span><span class="built_in">sub</span>(f2);</span><br><span class="line">        sub.<span class="built_in">print</span>();</span><br><span class="line">        cf mul = f<span class="number">1.</span><span class="built_in">mul</span>(f2);</span><br><span class="line">        mul.<span class="built_in">print</span>();</span><br><span class="line">        cf div = f<span class="number">1.</span><span class="built_in">div</span>(f2);</span><br><span class="line">        div.<span class="built_in">print</span>();</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>构造构造构造……意会一下吧。</p>
+<h4 id="Point-Array"><a href="#Point-Array" class="headerlink" title="Point_Array"></a>Point_Array</h4><h6 id="题目描述-6"><a href="#题目描述-6" class="headerlink" title="题目描述"></a>题目描述</h6><p><img src="http://10.11.219.21/app/data/media/image/81971c35929fb87b1c213b8a2cfa9f8f_1.png"></p>
+<p>上面是我们曾经练习过的一个习题，请在原来代码的基础上作以下修改：</p>
+<ol>
+<li>增加自写的析构函数；</li>
+<li>将getDisTo方法的参数修改为getDisTo(const Point &amp;p)；</li>
+<li>根据输出的内容修改相应的构造函数。</li>
+</ol>
+<p>然后在主函数中根据用户输入的数目建立Point数组，求出数组内距离最大的两个点之间的距离值。</p>
+<h6 id="code-7"><a href="#code-7" class="headerlink" title="code"></a>code</h6><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">point</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="type">double</span> x, y;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    ~<span class="built_in">point</span>();</span><br><span class="line">    <span class="built_in">point</span>();</span><br><span class="line">    <span class="built_in">point</span>(<span class="type">double</span> xx, <span class="type">double</span> yy);</span><br><span class="line">    <span class="function"><span class="type">double</span> <span class="title">getx</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="type">double</span> <span class="title">gety</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">set</span><span class="params">(<span class="type">double</span> xx, <span class="type">double</span> yy)</span></span>;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">setx</span><span class="params">(<span class="type">double</span> xx)</span></span>;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">sety</span><span class="params">(<span class="type">double</span> yy)</span></span>;</span><br><span class="line">    <span class="function"><span class="type">double</span> <span class="title">dis</span><span class="params">(<span class="type">const</span> point &amp;p)</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line">point::~<span class="built_in">point</span>()</span><br><span class="line">&#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Distructor.\n&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line">point::<span class="built_in">point</span>()</span><br><span class="line">&#123;</span><br><span class="line">    x = <span class="number">0</span>;</span><br><span class="line">    y = <span class="number">0</span>;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Constructor.\n&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line">point::<span class="built_in">point</span>(<span class="type">double</span> xx, <span class="type">double</span> yy)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">set</span>(xx, yy);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">point::set</span><span class="params">(<span class="type">double</span> xx, <span class="type">double</span> yy)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">setx</span>(xx);</span><br><span class="line">    <span class="built_in">sety</span>(yy);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">point::setx</span><span class="params">(<span class="type">double</span> xx)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    x = xx;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">point::sety</span><span class="params">(<span class="type">double</span> yy)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    y = yy;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">point::dis</span><span class="params">(<span class="type">const</span> point &amp;p)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">double</span> dx = x - p.x;</span><br><span class="line">    <span class="type">double</span> dy = y - p.y;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sqrt</span>(dx * dx + dy * dy);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">point::getx</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">point::gety</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> y;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> t;</span><br><span class="line">    cin &gt;&gt; t;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> u = <span class="number">0</span>; u &lt; t; u++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> n;</span><br><span class="line">        cin &gt;&gt; n;</span><br><span class="line">        point *p = <span class="keyword">new</span> point[n];</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">double</span> x, y;</span><br><span class="line">            cin &gt;&gt; x &gt;&gt; y;</span><br><span class="line">            p[i].<span class="built_in">set</span>(x, y);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">double</span> maxx = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> a = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> b = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n - <span class="number">1</span>; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> j = i + <span class="number">1</span>; j &lt; n; j++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="type">double</span> dd = p[i].<span class="built_in">dis</span>(p[j]);</span><br><span class="line">                <span class="keyword">if</span> (dd &gt; maxx)</span><br><span class="line">                &#123;</span><br><span class="line">                    maxx = dd;</span><br><span class="line">                    a = i;</span><br><span class="line">                    b = j;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;The longest distance is &quot;</span> &lt;&lt; fixed &lt;&lt; <span class="built_in">setprecision</span>(<span class="number">2</span>) &lt;&lt; maxx &lt;&lt; <span class="string">&quot;,between p[&quot;</span> &lt;&lt; a &lt;&lt; <span class="string">&quot;] and p[&quot;</span> &lt;&lt; b &lt;&lt; <span class="string">&quot;].\n&quot;</span>;</span><br><span class="line">        <span class="comment">// 析构</span></span><br><span class="line">        <span class="keyword">delete</span>[] p;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>就多了个析构函数的步骤。</p>
+<h4 id="Stack"><a href="#Stack" class="headerlink" title="Stack"></a>Stack</h4><h6 id="题目描述-7"><a href="#题目描述-7" class="headerlink" title="题目描述"></a>题目描述</h6><p><img src="http://10.11.219.21/app/data/media/image/7b2a69f00a1c305365e2426401731d93_1.png"></p>
+<p>上面是栈类的定义，<strong>栈</strong>是一种具有先进后出特点的线性表，请根据注释，完成类中所有方法的实现，并在主函数中测试之。</p>
+<p>堆栈类的说明如下：</p>
+<ol>
+<li>堆栈的数据实际上是保存在数组a中，而a开始是一个指针，在初始化时，根据实际需求将a动态创建为数组，数组长度根据构造函数的参数决定。</li>
+<li>size实际上就是数组的长度，当使用无参构造则size为10，当使用有参构造则size为s、</li>
+<li>top表示数组下标，也表示数组中下一个存放数据的空白位置。</li>
+<li>push操作表示堆栈的数组存放一个数据，例如一开始数组为空，则top为0，当有数据要入栈时，把数据存放在a[top]的位置，然后top加1指向下一个空白位置、数据进栈只能从栈顶进。</li>
+<li>pop操作表示一个数据要出栈，数据出栈只能从栈顶出，先把top减1指向栈顶数据，然后把数据返回。</li>
+<li>判断堆栈空的条件是top是否等于0，判断堆栈满的条件是top是否等于size</li>
+</ol>
+<h6 id="code-8"><a href="#code-8" class="headerlink" title="code"></a>code</h6><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">cstack</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">cstack</span>();</span><br><span class="line">    <span class="built_in">cstack</span>(<span class="type">int</span> s);</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">get</span><span class="params">(<span class="type">int</span> index)</span></span>;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">push</span><span class="params">(<span class="type">int</span> n)</span></span>;</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">emptyy</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">full</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">pop</span><span class="params">()</span></span>;</span><br><span class="line">    ~<span class="built_in">cstack</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="type">int</span> *a;</span><br><span class="line">    <span class="type">int</span> size;</span><br><span class="line">    <span class="type">int</span> top;</span><br><span class="line">&#125;;</span><br><span class="line">cstack::<span class="built_in">cstack</span>()</span><br><span class="line">&#123;</span><br><span class="line">    a = <span class="literal">nullptr</span>;</span><br><span class="line">    size = <span class="number">0</span>;</span><br><span class="line">    top = <span class="number">0</span>;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Constructor.\n&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line">cstack::<span class="built_in">cstack</span>(<span class="type">int</span> s)</span><br><span class="line">&#123;</span><br><span class="line">    a = <span class="keyword">new</span> <span class="type">int</span>[s];</span><br><span class="line">    size = s;</span><br><span class="line">    top = <span class="number">0</span>;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Constructor.\n&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">cstack::get</span><span class="params">(<span class="type">int</span> index)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> *(a + index);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">cstack::push</span><span class="params">(<span class="type">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    *(a + top) = n;</span><br><span class="line">    top++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">cstack::emptyy</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (top == <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">cstack::full</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (top == size)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">cstack::pop</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    top--;</span><br><span class="line">    <span class="keyword">return</span> *(a + top);</span><br><span class="line">&#125;</span><br><span class="line">cstack::~<span class="built_in">cstack</span>()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 记得释放数组</span></span><br><span class="line">    <span class="keyword">delete</span>[] a;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Destructor.\n&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> t;</span><br><span class="line">    cin &gt;&gt; t;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> u = <span class="number">0</span>; u &lt; t; u++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> n;</span><br><span class="line">        cin &gt;&gt; n;</span><br><span class="line">        cstack *s = <span class="keyword">new</span> <span class="built_in">cstack</span>(n);</span><br><span class="line">        <span class="keyword">while</span> (!s-&gt;<span class="built_in">full</span>())</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">int</span> x;</span><br><span class="line">            cin &gt;&gt; x;</span><br><span class="line">            s-&gt;<span class="built_in">push</span>(x);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (!s-&gt;<span class="built_in">emptyy</span>())</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// 不能输出行末空格……</span></span><br><span class="line">            <span class="keyword">if</span> (!s-&gt;<span class="built_in">full</span>())</span><br><span class="line">            &#123;</span><br><span class="line">                cout &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            cout &lt;&lt; s-&gt;<span class="built_in">pop</span>();</span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">        <span class="keyword">delete</span> s;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>原理差不多，练练手吧。好想用stack……</p>
+
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+              <a href="/2025/04/03/%E5%BF%86%E5%BE%80%E6%98%94/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>Prev</span>
+              </a>
+            
+          </div>
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
+              2025-04-04 07:24:37
+            </span>
+            
+                  <span class="post-categories">
+                    <i class="iconfont icon-bookmark" title="Categories"></i>
+                    
+                    <span class="span--category">
+                      <a href="/categories/code/" title="code">
+                        <b>#</b> code
+                      </a>
+                    </span>
+                    
+                  </span>
+              
+          </div>
+          <div class="post-foot-prev">
+            
+          </div>
+        </div>
+      
+    </div>
+    
+  <div id="btn-catalog" class="btn-catalog">
+    <i class="iconfont icon-catalog"></i>
+  </div>
+  <div class="post-catalog hidden" id="catalog">
+    <div class="title">Contents</div>
+    <div class="catalog-content">
+      
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E9%92%88"><span class="toc-text">指针</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%BE%E6%95%B0%E7%BB%84%E6%9C%80%E5%A4%A7%E5%80%BC"><span class="toc-text">找数组最大值</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#code"><span class="toc-text">code</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E7%9F%A9%E9%98%B5"><span class="toc-text">动态矩阵</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#code-1"><span class="toc-text">code</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%86%E9%92%A5%E5%8A%A0%E5%AF%86%E6%B3%95"><span class="toc-text">密钥加密法</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0-1"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#code-2"><span class="toc-text">code</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95%E7%94%A8%E4%B8%8E%E7%BB%93%E6%9E%84"><span class="toc-text">引用与结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B0%81%E6%98%AF%E8%80%81%E4%BA%8C"><span class="toc-text">谁是老二</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0-2"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#code-3"><span class="toc-text">code</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8A%84%E8%A2%AD%E6%9F%A5%E6%89%BE"><span class="toc-text">抄袭查找</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0-3"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#code-4"><span class="toc-text">code</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1"><span class="toc-text">类与对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BA%AB%E4%BD%93%E8%AF%84%E4%BC%B0"><span class="toc-text">身体评估</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0-4"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#code-5"><span class="toc-text">code</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%84%E9%80%A0%E4%B8%8E%E6%9E%90%E6%9E%84"><span class="toc-text">构造与析构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E6%95%B0%E7%B1%BB"><span class="toc-text">分数类</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0-5"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#code-6"><span class="toc-text">code</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Point-Array"><span class="toc-text">Point_Array</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0-6"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#code-7"><span class="toc-text">code</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Stack"><span class="toc-text">Stack</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0-7"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#code-8"><span class="toc-text">code</span></a></li></ol></li></ol></li></ol></li></ol>
+      
+    </div>
+  </div>
+
+  
+<script src="/js/catalog.js"></script>
+
+
+
+
+    
+      <div class="comments-container">
+        
+
+
+
+
+
+
+
+      </div>
+    
+  </div>
+
+
+        
+<div class="footer">
+  <div class="social">
+    <ul>
+      
+        <li>
+          
+              <a title="github" target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">
+                <i class="iconfont icon-github"></i>
+              </a>
+              
+        </li>
+        
+    </ul>
+  </div>
+  
+    
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">© 2025 kkkey11</a>
+        
+    </div>
+  
+    
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges | Powered by Hexo</a>
+        
+    </div>
+  
+  
+    <div class="footer-views">
+      
+          本站总访问量<span id="busuanzi_value_site_pv"></span>
+        
+      
+      
+          本站访客数<span id="busuanzi_value_site_uv"></span>
+        
+      
+    </div>
+  
+</div>
+
+      </div>
+
+      <div class="tools-bar">
+        <div class="back-to-top tools-bar-item hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/js/backtotop.js"></script>
+
+
+
+        
+  <div class="search-icon tools-bar-item" id="search-icon">
+    <a href="javascript: void(0)">
+      <i class="iconfont icon-search"></i>
+    </a>
+  </div>
+
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-search"></i>
+          </a>
+        </span>
+        
+          <input type="text" class="search-input" id="search-input" placeholder="搜索...">
+        
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-close"></i>
+          </a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var inputArea = document.querySelector("#search-input")
+    var searchOverlayArea = document.querySelector(".search-overlay")
+
+    inputArea.onclick = function() {
+      getSearchFile()
+      this.onclick = null
+    }
+
+    inputArea.onkeydown = function() {
+      if(event.keyCode == 13)
+        return false
+    }
+
+    function openOrHideSearchContent() {
+      let isHidden = searchOverlayArea.classList.contains('hidden')
+      if (isHidden) {
+        searchOverlayArea.classList.remove('hidden')
+        document.body.classList.add('hidden')
+        // inputArea.focus()
+      } else {
+        searchOverlayArea.classList.add('hidden')
+        document.body.classList.remove('hidden')
+      }
+    }
+
+    function blurSearchContent(e) {
+      if (e.target === searchOverlayArea) {
+        openOrHideSearchContent()
+      }
+    }
+
+    document.querySelector("#search-icon").addEventListener("click", openOrHideSearchContent, false)
+    document.querySelector("#search-close-icon").addEventListener("click", openOrHideSearchContent, false)
+    searchOverlayArea.addEventListener("click", blurSearchContent, false)
+
+    var searchFunc = function (path, search_id, content_id) {
+      'use strict';
+      var $input = document.getElementById(search_id);
+      var $resultContent = document.getElementById(content_id);
+      $resultContent.innerHTML = "<ul><span class='local-search-empty'>First search, index file loading, please wait...<span></ul>";
+      $.ajax({
+        // 0x01. load xml file
+        url: path,
+        dataType: "xml",
+        success: function (xmlResponse) {
+          // 0x02. parse xml file
+          var datas = $("entry", xmlResponse).map(function () {
+            return {
+              title: $("title", this).text(),
+              content: $("content", this).text(),
+              url: $("url", this).text()
+            };
+          }).get();
+          $resultContent.innerHTML = "";
+
+          $input.addEventListener('input', function () {
+            // 0x03. parse query to keywords list
+            var str = '<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length <= 0) {
+              return;
+            }
+            // 0x04. perform local searching
+            datas.forEach(function (data) {
+              var isMatch = true;
+              var content_index = [];
+              if (!data.title || data.title.trim() === '') {
+                data.title = "Untitled";
+              }
+              var orig_data_title = data.title.trim();
+              var data_title = orig_data_title.toLowerCase();
+              var orig_data_content = data.content.trim().replace(/<[^>]+>/g, "");
+              var data_content = orig_data_content.toLowerCase();
+              var data_url = data.url;
+              var index_title = -1;
+              var index_content = -1;
+              var first_occur = -1;
+              // only match artiles with not empty contents
+              if (data_content !== '') {
+                keywords.forEach(function (keyword, i) {
+                  index_title = data_title.indexOf(keyword);
+                  index_content = data_content.indexOf(keyword);
+
+                  if (index_title < 0 && index_content < 0) {
+                    isMatch = false;
+                  } else {
+                    if (index_content < 0) {
+                      index_content = 0;
+                    }
+                    if (i == 0) {
+                      first_occur = index_content;
+                    }
+                    // content_index.push({index_content:index_content, keyword_len:keyword_len});
+                  }
+                });
+              } else {
+                isMatch = false;
+              }
+              // 0x05. show search results
+              if (isMatch) {
+                str += "<li><a href='" + data_url + "' class='search-result-title'>" + orig_data_title + "</a>";
+                var content = orig_data_content;
+                if (first_occur >= 0) {
+                  // cut out 100 characters
+                  var start = first_occur - 20;
+                  var end = first_occur + 80;
+
+                  if (start < 0) {
+                    start = 0;
+                  }
+
+                  if (start == 0) {
+                    end = 100;
+                  }
+
+                  if (end > content.length) {
+                    end = content.length;
+                  }
+
+                  var match_content = content.substr(start, end);
+
+                  // highlight all keywords
+                  keywords.forEach(function (keyword) {
+                    var regS = new RegExp(keyword, "gi");
+                    match_content = match_content.replace(regS, "<span class=\"search-keyword\">" + keyword + "</span>");
+                  });
+
+                  str += "<p class=\"search-result-abstract\">" + match_content + "...</p>"
+                }
+                str += "</li>";
+              }
+            });
+            str += "</ul>";
+            if (str.indexOf('<li>') === -1) {
+              return $resultContent.innerHTML = "<ul><span class='local-search-empty'>No result<span></ul>";
+            }
+            $resultContent.innerHTML = str;
+          });
+        },
+        error: function(xhr, status, error) {
+          $resultContent.innerHTML = ""
+          if (xhr.status === 404) {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>The search.xml file was not found, please refer to：<a href='https://github.com/zchengsite/hexo-theme-oranges#configuration' target='_black'>configuration</a><span></ul>";
+          } else {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>The request failed, Try to refresh the page or try again later.<span></ul>";
+          }
+        }
+      });
+      $(document).on('click', '#search-close-icon', function() {
+        $('#search-input').val('');
+        $('#search-result').html('');
+      });
+    }
+
+    var getSearchFile = function() {
+        var path = "/search.xml";
+        searchFunc(path, 'search-input', 'search-result');
+    }
+  </script>
+
+
+
+
+        
+  <div class="tools-bar-item theme-icon" id="switch-color-scheme">
+    <a href="javascript: void(0)">
+      <i id="theme-icon" class="iconfont icon-moon"></i>
+    </a>
+  </div>
+
+  
+<script src="/js/colorscheme.js"></script>
+
+
+
+
+
+        
+  
+    <div class="share-icon tools-bar-item">
+      <a href="javascript: void(0)" id="share-icon">
+        <i class="iconfont iconshare"></i>
+      </a>
+      <div class="share-content hidden">
+        
+          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + %E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1 + '&url=' + http%3A%2F%2Fexample.com%2F2025%2F04%2F04%2F%25E9%259D%25A2%25E5%2590%2591%25E5%25AF%25B9%25E8%25B1%25A1%25E7%25A8%258B%25E5%25BA%258F%25E8%25AE%25BE%25E8%25AE%25A1%2F + '" target="_blank" title="Twitter">
+            <i class="iconfont icon-twitter"></i>
+          </a>
+        
+        
+          <a class="share-item" href="https://www.facebook.com/sharer.php?u=http://example.com/2025/04/04/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" target="_blank" title="Facebook">
+            <i class="iconfont icon-facebooksquare"></i>
+          </a>
+        
+      </div>
+    </div>
+  
+  
+<script src="/js/shares.js"></script>
+
+
+
+      </div>
+    </div>
+  </body>
+</html>
