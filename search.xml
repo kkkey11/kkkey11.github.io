@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>警钟长鸣</title>
+      <link href="/2025/05/06/%E8%AD%A6%E9%92%9F%E9%95%BF%E9%B8%A3/"/>
+      <url>/2025/05/06/%E8%AD%A6%E9%92%9F%E9%95%BF%E9%B8%A3/</url>
+      
+        <content type="html"><![CDATA[<ol><li>不开longlong见祖宗，真是……总要wa两发才意识到要开longlong，但实际上一开始就应该对数据范围保持敏锐了。</li><li>用memset有t的可能性，建议手动清空。</li><li>选用合适的容器，没必要小题大做，比如能用普通数组完成的东西没必要开map，可能mle或re。</li><li>总是下意识把容器放在全局，然后每次又clear操作……多此一举不说还增加时间复杂度。一旦忘记clear还会出问题。。。</li><li>总是懒得开数组就边读数边操作，但是这样不能break操作，有时更耗时，而且还可能产生不小心重置变量的情况。</li><li>如果超时可能是因为没关同步流。</li><li>自己debug很容易习惯性忽视一些很显而易见问题，建议重写。</li><li>审题。80%的问题都出于审题不清。</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> code </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>一些反思总结</title>
       <link href="/2025/04/25/%E4%B8%80%E4%BA%9B%E5%8F%8D%E6%80%9D%E6%80%BB%E7%BB%93/"/>
       <url>/2025/04/25/%E4%B8%80%E4%BA%9B%E5%8F%8D%E6%80%9D%E6%80%BB%E7%BB%93/</url>
