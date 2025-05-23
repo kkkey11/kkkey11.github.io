@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en" color-mode="light">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="John Doe" />
+  <!-- Open Graph Description 简短摘要-->
+  
+  <!-- 用于搜索引擎的文章摘要 -->
+  
+  
+  
+  <title>
+    
+      一些思路 
+      
+      
+      |
+    
+     key11&#39;s Blog
+  </title>
+
+  
+    <link rel="apple-touch-icon" href="https://kkkey11-image.oss-cn-shenzhen.aliyuncs.com/blog/cat.png">
+    <link rel="icon" href="https://kkkey11-image.oss-cn-shenzhen.aliyuncs.com/blog/cat.png">
+  
+
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+  <!-- hexo site css -->
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1886449_67xjft27j1l.css" />
+  <!-- 代码块风格 -->
+  
+
+  <!-- jquery3.3.1 -->
+  
+    <script defer type="text/javascript" src="/plugins/jquery.min.js"></script>
+  
+
+  <!-- fancybox -->
+  
+    <link href="/plugins/jquery.fancybox.min.css" rel="stylesheet">
+    <script defer type="text/javascript" src="/plugins/jquery.fancybox.min.js"></script>
+  
+  
+<script src="/js/fancybox.js"></script>
+
+
+  
+
+  
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  <script>
+    var html = document.documentElement
+    const colorMode = localStorage.getItem('color-mode')
+    if (colorMode) {
+      document.documentElement.setAttribute('color-mode', colorMode)
+    }
+  </script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+  <body>
+    <div id="app">
+      <div class="header">
+  <div class="avatar">
+    <a href="/">
+      <!-- 头像取消懒加载，添加no-lazy -->
+      
+        <img src="https://kkkey11-image.oss-cn-shenzhen.aliyuncs.com/blog/cat.png" alt="">
+      
+    </a>
+    <div class="nickname"><a href="/">kkkey11</a></div>
+  </div>
+  <div class="navbar">
+    <ul>
+      
+        <li class="nav-item" data-path="/">
+          <a href="/">主页</a>
+        </li>
+      
+        <li class="nav-item" data-path="/archives/">
+          <a href="/archives/">归档</a>
+        </li>
+      
+        <li class="nav-item" data-path="/categories/">
+          <a href="/categories/">分类</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+<script src="/js/activeNav.js"></script>
+
+
+
+      <div class="flex-container">
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+
+
+  <!-- LaTex Display -->
+
+  
+    <script async type="text/javascript" src="/plugins/mathjax/tex-chtml.js"></script>
+  
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    }
+  </script>
+
+
+
+
+
+  <!-- clipboard -->
+
+  
+    <script async type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.10/dist/clipboard.min.js"></script>
+  
+  
+<script src="/js/codeCopy.js"></script>
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">一些思路</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
+          2025-05-23 16:36:50
+        </span>
+        
+              <span class="post-categories">
+                <i class="iconfont icon-bookmark" title="Categories"></i>
+                
+                <span class="span--category">
+                  <a href="/categories/code/" title="code">
+                    <b>#</b> code
+                  </a>
+                </span>
+                
+              </span>
+          
+      </div>
+      <div class="markdown-body">
+        <p>记录一些想出思路之后感觉很有意思的题目</p>
+<hr>
+<p>当前只想起来这几题，而且作为算法小白所学算法实在少，题目难度不高，但是觉得思路很巧妙或者思路对某一算法的理解有很大加深。</p>
+<h3 id="Codeforces-edu177-Disappearing-Permutation"><a href="#Codeforces-edu177-Disappearing-Permutation" class="headerlink" title="Codeforces-edu177-Disappearing Permutation"></a><a target="_blank" rel="noopener" href="https://codeforces.com/contest/2086/problem/C">Codeforces-edu177-Disappearing Permutation</a></h3><p>一道并查集启蒙题。</p>
+<p>感觉在写这题之前并查集就是一个模板放在那里，不遇到板一点的题难以触动那根神经，但是在想到这题的思路之后感觉并查集作为一个工具真是……好用啊。当时看懂题目花了好一阵子，想写dfs但是在一些处理上感觉很头大，但是一旦想起并查集，就忽然发现代码实现很简单……</p>
+<p>其实就是看哪几个数字混一起了，把混一起的数字放一组，每次到哪个数字就把那个数字所在的组理顺。</p>
+<p>很简单的一个实现。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;map&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> fa[<span class="number">100001</span>];</span><br><span class="line"><span class="type">int</span> cnt[<span class="number">100001</span>];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">find</span><span class="params">(<span class="type">int</span> i)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (fa[i] == i)</span><br><span class="line">        <span class="keyword">return</span> fa[i];</span><br><span class="line">    <span class="keyword">return</span> fa[i] = <span class="built_in">find</span>(fa[i]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">uni</span><span class="params">(<span class="type">int</span> i, <span class="type">int</span> j)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> ifa = <span class="built_in">find</span>(i);</span><br><span class="line">    <span class="type">int</span> jfa = <span class="built_in">find</span>(j);</span><br><span class="line">    fa[ifa] = jfa;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> t;</span><br><span class="line">    cin &gt;&gt; t;</span><br><span class="line">    <span class="keyword">while</span> (t--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> n;</span><br><span class="line">        cin &gt;&gt; n;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">            fa[i] = i;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">int</span> x;</span><br><span class="line">            cin &gt;&gt; x;</span><br><span class="line">            <span class="comment">// 读入的数字和它的序列混一起</span></span><br><span class="line">            <span class="built_in">uni</span>(x, i); </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">            cnt[<span class="built_in">find</span>(i)]++;</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">int</span> x;</span><br><span class="line">            cin &gt;&gt; x;</span><br><span class="line">            ans += cnt[<span class="built_in">find</span>(x)];</span><br><span class="line">            cnt[<span class="built_in">find</span>(x)] = <span class="number">0</span>;</span><br><span class="line">            cout &lt;&lt; ans &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>忽然想起来其实真正的启蒙题应该是这场cf前几天的abc看错的题，有一道换座位的题目，但是因为看错题看成校赛出的那种换座位了……打完才发现看错题目了，结果当时看错题的思路放上校赛拿了个一血……第一次如此深刻体会塞翁失马焉知非福……感觉并查集真的是很值得一学的算法，思路很简单实现很容易用起来也很方便，性价比很高。</p>
+<h3 id="P1525-NOIP-2010-提高组-关押罪犯-洛谷"><a href="#P1525-NOIP-2010-提高组-关押罪犯-洛谷" class="headerlink" title="[P1525 NOIP 2010 提高组] 关押罪犯 - 洛谷"></a>[P1525 <a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1525">NOIP 2010 提高组] 关押罪犯 - 洛谷</a></h3><p>并查集的另外一种思想之放在对立面。</p>
+<p>放在对立面的思想应当在思考团伙（朋友的朋友是朋友，敌人的敌人是朋友）的时候有意识，有了该思想之后这题就可以秒了。</p>
+<p>在实现团伙的时候，应当会想把一个人放在另一个人的敌人团伙里也就是对立面，一个人的对立面节点应该如何创建？每个人的编号为<code>1-n</code>，那我们很容易想到把每个人的对立面设为<code>i+n</code>，就可以有效避免编号重复且一一对应了。</p>
+<p>回到这题，对立面的思想就很有用了~我们可以先将每对组合按照怨气值作一个降序排序，从怨气值最大的开始，把两个人放在对方对立面，如果两个人已经在一个集合内，则输出当前怒气值。题目是不是一下子就变得很容易了……</p>
+<p>实现也非常简单</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> fa[<span class="number">40002</span>];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">find</span><span class="params">(<span class="type">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (fa[x] == x)</span><br><span class="line">        <span class="keyword">return</span> x;</span><br><span class="line">    <span class="keyword">return</span> fa[x] = <span class="built_in">find</span>(fa[x]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">uni</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> f1 = <span class="built_in">find</span>(x);</span><br><span class="line">    <span class="type">int</span> f2 = <span class="built_in">find</span>(y);</span><br><span class="line">    <span class="keyword">if</span> (f1 != f2)</span><br><span class="line">        fa[f1] = f2;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">aa</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> x, y, w;</span><br><span class="line">    <span class="type">bool</span> <span class="keyword">operator</span>&lt;(<span class="type">const</span> aa &amp;a) <span class="type">const</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> w &lt; a.w;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">priority_queue&lt;aa&gt; q;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> n, m;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="comment">//记得对立面也要初始化</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">2</span> * n; i++)</span><br><span class="line">        fa[i] = i;</span><br><span class="line">    <span class="type">int</span> x, y, w;</span><br><span class="line">    <span class="keyword">while</span> (m--)</span><br><span class="line">    &#123;</span><br><span class="line">        cin &gt;&gt; x &gt;&gt; y &gt;&gt; w;</span><br><span class="line">        q.<span class="built_in">push</span>(&#123;x, y, w&#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (!q.<span class="built_in">empty</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        aa a = q.<span class="built_in">top</span>();</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">find</span>(a.x) != <span class="built_in">find</span>(a.y))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//放在对方对立面~</span></span><br><span class="line">            <span class="built_in">uni</span>(a.x + n, a.y);</span><br><span class="line">            <span class="built_in">uni</span>(a.y + n, a.x);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            cout &lt;&lt; a.w;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        q.<span class="built_in">pop</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Codeforces-1024-Quartet-Swapping"><a href="#Codeforces-1024-Quartet-Swapping" class="headerlink" title="Codeforces-1024-Quartet Swapping	"></a><a target="_blank" rel="noopener" href="https://codeforces.com/contest/2102/problem/D">Codeforces-1024-Quartet Swapping	</a></h3><p>一道逆序对实际应用。以前写逆序对是看着算法书的例题写的，当时写得很迷迷糊糊……甚至之后忘记自己写过逆序对也不记得逆序对的意义了，直到看到这题，在想如何实现在一数组里如何寻找大于当前数字且序列比当前数字小的数字个数，每次遍历tle是必然……打完忽然发现……这不就是逆序对个数！？</p>
+<p>这题的思路是奇位置偶位置各存一数组，分别sort，如果两者原数组逆序对之差为奇数，则调换倒数第一个和倒数第三个再输出。至于为什么……当时猜的。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> cnt[<span class="number">2</span>];</span><br><span class="line"><span class="type">int</span> c[<span class="number">100005</span>];</span><br><span class="line">vector&lt;<span class="type">int</span>&gt; v[<span class="number">2</span>];</span><br><span class="line"><span class="comment">//归并排序计算逆序对</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">f</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b, <span class="type">int</span> g)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> mid;</span><br><span class="line">    mid = (a + b) / <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span> (b - a == <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    <span class="built_in">f</span>(a, mid, g);</span><br><span class="line">    <span class="built_in">f</span>(mid + <span class="number">1</span>, b, g);</span><br><span class="line">    <span class="type">int</span> i = a;</span><br><span class="line">    <span class="type">int</span> j = mid + <span class="number">1</span>;</span><br><span class="line">    <span class="type">int</span> l = a;</span><br><span class="line">    <span class="keyword">while</span> (i &lt;= mid &amp;&amp; j &lt;= b)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (v[g][i] &lt;= v[g][j])</span><br><span class="line">            c[l++] = v[g][i++];</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            c[l++] = v[g][j++];</span><br><span class="line">            cnt[g] += mid - i + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (i &lt;= mid)</span><br><span class="line">        c[l++] = v[g][i++];</span><br><span class="line">    <span class="keyword">while</span> (j &lt;= b)</span><br><span class="line">        c[l++] = v[g][j++];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = a; i &lt;= b; i++)</span><br><span class="line">        v[g][i] = c[i];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    cout.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="type">int</span> t;</span><br><span class="line">    cin &gt;&gt; t;</span><br><span class="line">    <span class="keyword">while</span> (t--)</span><br><span class="line">    &#123;</span><br><span class="line">        v[<span class="number">0</span>].<span class="built_in">clear</span>();</span><br><span class="line">        v[<span class="number">1</span>].<span class="built_in">clear</span>();</span><br><span class="line">        <span class="type">int</span> n;</span><br><span class="line">        <span class="type">int</span> x;</span><br><span class="line">        cin &gt;&gt; n;</span><br><span class="line">        cnt[<span class="number">0</span>] = cnt[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            cin &gt;&gt; x;</span><br><span class="line">            v[i % <span class="number">2</span>].<span class="built_in">push_back</span>(x);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">f</span>(<span class="number">0</span>, v[<span class="number">1</span>].<span class="built_in">size</span>() - <span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line">        <span class="built_in">f</span>(<span class="number">0</span>, v[<span class="number">0</span>].<span class="built_in">size</span>() - <span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">if</span> ((cnt[<span class="number">0</span>] - cnt[<span class="number">1</span>]) % <span class="number">2</span> != <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">int</span> p = v[n % <span class="number">2</span>].<span class="built_in">size</span>() - <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (p &gt;= <span class="number">1</span>)</span><br><span class="line">            	<span class="comment">//若逆序对差为奇，调换。</span></span><br><span class="line">                <span class="built_in">swap</span>(v[n % <span class="number">2</span>][p], v[n % <span class="number">2</span>][p - <span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="built_in">max</span>(v[<span class="number">0</span>].<span class="built_in">size</span>(), v[<span class="number">1</span>].<span class="built_in">size</span>()); ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (i &lt; v[<span class="number">1</span>].<span class="built_in">size</span>())</span><br><span class="line">                cout &lt;&lt; v[<span class="number">1</span>][i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">            <span class="keyword">if</span> (i &lt; v[<span class="number">0</span>].<span class="built_in">size</span>())</span><br><span class="line">                cout &lt;&lt; v[<span class="number">0</span>][i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其实当时不明白为什么该思路ac。后来去补了有关逆序对的题目感觉明白了，一个数组想通过交换相邻数字达到有序状态，交换次数就是其逆序对个数。这道题目也是奇位置偶位置的数组分别通过交换相邻数字达到有序状态，若两数组逆序对之差为奇数就无法完全置换，为达到最优解选择不交换最后一对。</p>
+<h3 id="ICPC-Wuhan-2024-Countless-Me"><a href="#ICPC-Wuhan-2024-Countless-Me" class="headerlink" title="ICPC(Wuhan),2024-Countless Me"></a><a target="_blank" rel="noopener" href="https://codeforces.com/gym/608018/problem/B">ICPC(Wuhan),2024-Countless Me</a></h3><p>一道很巧妙的进制转化，看似是把数字加来减去，实际上跟单个数字大小一点关系也没有，看清这一本质之后这题就很简单了，直接变成一道进制转化题，将sum在十进制转二进制的基础上做一点小处理就好了，难以形容……应该说是十进制转n*二进制，得以将值压缩到最小状态，重点是处理好小细节。感觉训练赛有很多二进制相关的题目，都非常巧妙……让人忽然感受到二进制的魅力。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">long</span> <span class="type">long</span> n, x, sum = <span class="number">0</span>, ans = <span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    cout.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cin &gt;&gt; x;</span><br><span class="line">        sum += x;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">30</span>; i &gt;= <span class="number">0</span>; i--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//看起来是不是非常熟悉……</span></span><br><span class="line">        <span class="keyword">if</span> (sum &gt; ((<span class="number">1</span> &lt;&lt; i) - <span class="number">1</span>) * n)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">long</span> <span class="type">long</span> g = sum / (<span class="number">1</span> &lt;&lt; i);</span><br><span class="line">            g = <span class="built_in">min</span>(n, g);<span class="comment">//这一步操作防止减多</span></span><br><span class="line">            sum -= g * (<span class="number">1</span> &lt;&lt; i);</span><br><span class="line">            ans += (<span class="number">1</span> &lt;&lt; i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (sum != <span class="number">0</span>)</span><br><span class="line">        ans++;<span class="comment">//如果有剩下记得补一个1</span></span><br><span class="line">    cout &lt;&lt; ans;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="1407-循环赛日程表"><a href="#1407-循环赛日程表" class="headerlink" title="1407:循环赛日程表"></a><a target="_blank" rel="noopener" href="https://cpc.csgrandeur.cn/csgoj/problemset/problem?pid=1407">1407:循环赛日程表</a></h3><p>一道找规律（虽然本意应该不是找规律。</p>
+<p>找规律第一步是分析样例！n&#x3D;8时</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">2 3 4 5 6 7 8</span><br><span class="line">1 4 3 6 5 8 7</span><br><span class="line">4 1 2 7 8 5 6</span><br><span class="line">3 2 1 8 7 6 5</span><br><span class="line">6 7 8 1 2 3 4</span><br><span class="line">5 8 7 2 1 4 3</span><br><span class="line">8 5 6 3 4 1 2</span><br><span class="line">7 6 5 4 3 2 1</span><br></pre></td></tr></table></figure>
+
+<p>看啊看啊看，然后发现，数字都是一对一对交换的？！然后应该思考哪些数字可以成为一对，这里注意数据，给出的n是2的次方，所以我们应该往2的次方相关去思考。而且我们不难发现，如果上面的数字是自己<code>i</code>的话，自己<code>i</code>不跟自己<code>i</code>打，那就跟上一个人<code>i-1</code>打</p>
+<p>然后把每一行跟上一行交换的数字列举出来：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">2: 34,56,78,1</span><br><span class="line">3: 14,67,58,2</span><br><span class="line">4: 12,56,78,3</span><br><span class="line">5: 18,27,36,4</span><br><span class="line">6: 12,34,78,5</span><br><span class="line">7: 14,23,58,6</span><br><span class="line">8: 12,34,56,7</span><br></pre></td></tr></table></figure>
+
+<p>列出来之后……是不是就感觉这些数字很有关联啊！可以看作第二行缺12凑对第三行缺23凑对，以此类推，然后就可以进一步发现每组凑对的数在一个二的次方两端都是对称的，比如第三行就是14，23，58，67，第五行是18，27，36，45，至此规律找得差不多了，可以开始代码实现了。如何找这个二的次方呢，设该行为<code>i</code>，那么这个次方数应当是<code>i-1</code>能够<code>%=0</code>的最大的2的次方数再乘以2。</p>
+<p>实现实现</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> a[<span class="number">33</span>][<span class="number">33</span>];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    cout.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; n; i++)</span><br><span class="line">        a[<span class="number">1</span>][i] = i + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> k = <span class="number">2</span>;</span><br><span class="line">        <span class="type">int</span> g = i - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (g % <span class="number">2</span> == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            k *= <span class="number">2</span>;</span><br><span class="line">            g /= <span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt; n; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (a[i - <span class="number">1</span>][j] == i)</span><br><span class="line">                a[i][j] = i - <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="type">int</span> b = a[i - <span class="number">1</span>][j] - <span class="number">1</span>;</span><br><span class="line">                <span class="type">int</span> d = b % k;</span><br><span class="line">                b /= k;</span><br><span class="line">                a[i][j] = (b + <span class="number">1</span>) * k - d;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt; n; j++)</span><br><span class="line">            cout &lt;&lt; a[i][j] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>总结——找规律之观察样例法。但是经常cf的题目样例可能会误导你找规律，这时候找规律其实就是看透题目本质。能不能看透……看运气。大胆猜测小心求证。</p>
+
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+              <a href="/2025/05/06/%E8%AD%A6%E9%92%9F%E9%95%BF%E9%B8%A3/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>Prev</span>
+              </a>
+            
+          </div>
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
+              2025-05-23 16:36:50
+            </span>
+            
+                  <span class="post-categories">
+                    <i class="iconfont icon-bookmark" title="Categories"></i>
+                    
+                    <span class="span--category">
+                      <a href="/categories/code/" title="code">
+                        <b>#</b> code
+                      </a>
+                    </span>
+                    
+                  </span>
+              
+          </div>
+          <div class="post-foot-prev">
+            
+          </div>
+        </div>
+      
+    </div>
+    
+  <div id="btn-catalog" class="btn-catalog">
+    <i class="iconfont icon-catalog"></i>
+  </div>
+  <div class="post-catalog hidden" id="catalog">
+    <div class="title">Contents</div>
+    <div class="catalog-content">
+      
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Codeforces-edu177-Disappearing-Permutation"><span class="toc-text">Codeforces-edu177-Disappearing Permutation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#P1525-NOIP-2010-%E6%8F%90%E9%AB%98%E7%BB%84-%E5%85%B3%E6%8A%BC%E7%BD%AA%E7%8A%AF-%E6%B4%9B%E8%B0%B7"><span class="toc-text">[P1525 NOIP 2010 提高组] 关押罪犯 - 洛谷</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Codeforces-1024-Quartet-Swapping"><span class="toc-text">Codeforces-1024-Quartet Swapping	</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ICPC-Wuhan-2024-Countless-Me"><span class="toc-text">ICPC(Wuhan),2024-Countless Me</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1407-%E5%BE%AA%E7%8E%AF%E8%B5%9B%E6%97%A5%E7%A8%8B%E8%A1%A8"><span class="toc-text">1407:循环赛日程表</span></a></li></ol>
+      
+    </div>
+  </div>
+
+  
+<script src="/js/catalog.js"></script>
+
+
+
+
+    
+      <div class="comments-container">
+        
+
+
+
+
+
+
+
+      </div>
+    
+  </div>
+
+
+        
+<div class="footer">
+  <div class="social">
+    <ul>
+      
+        <li>
+          
+              <a title="github" target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">
+                <i class="iconfont icon-github"></i>
+              </a>
+              
+        </li>
+        
+    </ul>
+  </div>
+  
+    
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">© 2025 kkkey11</a>
+        
+    </div>
+  
+    
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges | Powered by Hexo</a>
+        
+    </div>
+  
+  
+    <div class="footer-views">
+      
+          本站总访问量<span id="busuanzi_value_site_pv"></span>
+        
+      
+      
+          本站访客数<span id="busuanzi_value_site_uv"></span>
+        
+      
+    </div>
+  
+</div>
+
+      </div>
+
+      <div class="tools-bar">
+        <div class="back-to-top tools-bar-item hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/js/backtotop.js"></script>
+
+
+
+        
+  <div class="search-icon tools-bar-item" id="search-icon">
+    <a href="javascript: void(0)">
+      <i class="iconfont icon-search"></i>
+    </a>
+  </div>
+
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-search"></i>
+          </a>
+        </span>
+        
+          <input type="text" class="search-input" id="search-input" placeholder="搜索...">
+        
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-close"></i>
+          </a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var inputArea = document.querySelector("#search-input")
+    var searchOverlayArea = document.querySelector(".search-overlay")
+
+    inputArea.onclick = function() {
+      getSearchFile()
+      this.onclick = null
+    }
+
+    inputArea.onkeydown = function() {
+      if(event.keyCode == 13)
+        return false
+    }
+
+    function openOrHideSearchContent() {
+      let isHidden = searchOverlayArea.classList.contains('hidden')
+      if (isHidden) {
+        searchOverlayArea.classList.remove('hidden')
+        document.body.classList.add('hidden')
+        // inputArea.focus()
+      } else {
+        searchOverlayArea.classList.add('hidden')
+        document.body.classList.remove('hidden')
+      }
+    }
+
+    function blurSearchContent(e) {
+      if (e.target === searchOverlayArea) {
+        openOrHideSearchContent()
+      }
+    }
+
+    document.querySelector("#search-icon").addEventListener("click", openOrHideSearchContent, false)
+    document.querySelector("#search-close-icon").addEventListener("click", openOrHideSearchContent, false)
+    searchOverlayArea.addEventListener("click", blurSearchContent, false)
+
+    var searchFunc = function (path, search_id, content_id) {
+      'use strict';
+      var $input = document.getElementById(search_id);
+      var $resultContent = document.getElementById(content_id);
+      $resultContent.innerHTML = "<ul><span class='local-search-empty'>First search, index file loading, please wait...<span></ul>";
+      $.ajax({
+        // 0x01. load xml file
+        url: path,
+        dataType: "xml",
+        success: function (xmlResponse) {
+          // 0x02. parse xml file
+          var datas = $("entry", xmlResponse).map(function () {
+            return {
+              title: $("title", this).text(),
+              content: $("content", this).text(),
+              url: $("url", this).text()
+            };
+          }).get();
+          $resultContent.innerHTML = "";
+
+          $input.addEventListener('input', function () {
+            // 0x03. parse query to keywords list
+            var str = '<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length <= 0) {
+              return;
+            }
+            // 0x04. perform local searching
+            datas.forEach(function (data) {
+              var isMatch = true;
+              var content_index = [];
+              if (!data.title || data.title.trim() === '') {
+                data.title = "Untitled";
+              }
+              var orig_data_title = data.title.trim();
+              var data_title = orig_data_title.toLowerCase();
+              var orig_data_content = data.content.trim().replace(/<[^>]+>/g, "");
+              var data_content = orig_data_content.toLowerCase();
+              var data_url = data.url;
+              var index_title = -1;
+              var index_content = -1;
+              var first_occur = -1;
+              // only match artiles with not empty contents
+              if (data_content !== '') {
+                keywords.forEach(function (keyword, i) {
+                  index_title = data_title.indexOf(keyword);
+                  index_content = data_content.indexOf(keyword);
+
+                  if (index_title < 0 && index_content < 0) {
+                    isMatch = false;
+                  } else {
+                    if (index_content < 0) {
+                      index_content = 0;
+                    }
+                    if (i == 0) {
+                      first_occur = index_content;
+                    }
+                    // content_index.push({index_content:index_content, keyword_len:keyword_len});
+                  }
+                });
+              } else {
+                isMatch = false;
+              }
+              // 0x05. show search results
+              if (isMatch) {
+                str += "<li><a href='" + data_url + "' class='search-result-title'>" + orig_data_title + "</a>";
+                var content = orig_data_content;
+                if (first_occur >= 0) {
+                  // cut out 100 characters
+                  var start = first_occur - 20;
+                  var end = first_occur + 80;
+
+                  if (start < 0) {
+                    start = 0;
+                  }
+
+                  if (start == 0) {
+                    end = 100;
+                  }
+
+                  if (end > content.length) {
+                    end = content.length;
+                  }
+
+                  var match_content = content.substr(start, end);
+
+                  // highlight all keywords
+                  keywords.forEach(function (keyword) {
+                    var regS = new RegExp(keyword, "gi");
+                    match_content = match_content.replace(regS, "<span class=\"search-keyword\">" + keyword + "</span>");
+                  });
+
+                  str += "<p class=\"search-result-abstract\">" + match_content + "...</p>"
+                }
+                str += "</li>";
+              }
+            });
+            str += "</ul>";
+            if (str.indexOf('<li>') === -1) {
+              return $resultContent.innerHTML = "<ul><span class='local-search-empty'>No result<span></ul>";
+            }
+            $resultContent.innerHTML = str;
+          });
+        },
+        error: function(xhr, status, error) {
+          $resultContent.innerHTML = ""
+          if (xhr.status === 404) {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>The search.xml file was not found, please refer to：<a href='https://github.com/zchengsite/hexo-theme-oranges#configuration' target='_black'>configuration</a><span></ul>";
+          } else {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>The request failed, Try to refresh the page or try again later.<span></ul>";
+          }
+        }
+      });
+      $(document).on('click', '#search-close-icon', function() {
+        $('#search-input').val('');
+        $('#search-result').html('');
+      });
+    }
+
+    var getSearchFile = function() {
+        var path = "/search.xml";
+        searchFunc(path, 'search-input', 'search-result');
+    }
+  </script>
+
+
+
+
+        
+  <div class="tools-bar-item theme-icon" id="switch-color-scheme">
+    <a href="javascript: void(0)">
+      <i id="theme-icon" class="iconfont icon-moon"></i>
+    </a>
+  </div>
+
+  
+<script src="/js/colorscheme.js"></script>
+
+
+
+
+
+        
+  
+    <div class="share-icon tools-bar-item">
+      <a href="javascript: void(0)" id="share-icon">
+        <i class="iconfont iconshare"></i>
+      </a>
+      <div class="share-content hidden">
+        
+          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + %E4%B8%80%E4%BA%9B%E6%80%9D%E8%B7%AF + '&url=' + http%3A%2F%2Fexample.com%2F2025%2F05%2F23%2FMy-New-Post%2F + '" target="_blank" title="Twitter">
+            <i class="iconfont icon-twitter"></i>
+          </a>
+        
+        
+          <a class="share-item" href="https://www.facebook.com/sharer.php?u=http://example.com/2025/05/23/My-New-Post/" target="_blank" title="Facebook">
+            <i class="iconfont icon-facebooksquare"></i>
+          </a>
+        
+      </div>
+    </div>
+  
+  
+<script src="/js/shares.js"></script>
+
+
+
+      </div>
+    </div>
+  </body>
+</html>
